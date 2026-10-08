@@ -26,8 +26,9 @@
 
 - [`chap2_data.pptx`](lecture/chap2_data.pptx)：第二讲“理解数据”课堂课件，供课后复习使用。
 - [`data.md`](lecture/data.md)：第二讲文字讲义，包含变量类型、数据质量、相似性、抽样和预处理等内容。
+- [`pbl-understanding-data-evidence-pack.docx`](lecture/pbl-understanding-data-evidence-pack.docx)：Packet A–D 拓展证据包，供课堂延伸和进一步分析使用。
 
-课件和文字讲义覆盖的内容多于本次作业要求。`data.md` 第七节保留的是早期拓展作业设计；当前 HW02 的必做范围仍以本页说明和学生工作单中的 Q1–Q6 为准。
+课件和文字讲义覆盖的内容多于本次作业要求。`data.md` 第七节保留的是早期拓展作业设计，拓展证据包采用 Q1–Q10 框架；两者均不代表新增必做题。当前 HW02 的必做范围仍以本页说明和学生工作单中的 Q1–Q6 为准。
 
 ## 需要完成的内容
 
