@@ -65,7 +65,7 @@ git add submissions/hw01/20260001-张三.md
 git commit -m "提交张三的 Git 练习"
 ```
 
-## 第六步：Push 到自己的 GitHub 仓库
+## 第六步：Push 到仓库中的个人分支
 
 ```bash
 git push -u origin hw01/学号-姓名
@@ -98,7 +98,7 @@ git pull origin main
 git switch -c hw02/学号-姓名
 ```
 
-然后在 `submissions/hw02` 目录完成作业，Commit、Push，并创建新的 Pull Request。每次作业都应使用新的分支。
+然后按照 [`assignments/hw02/README.md`](assignments/hw02/README.md) 的要求，在 `submissions/hw02/学号-姓名/` 中完成作业，Commit、Push，并创建新的 Pull Request。每次作业都应使用新的分支。
 
 ## 常用排错命令
 
