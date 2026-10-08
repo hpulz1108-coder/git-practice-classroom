@@ -1,0 +1,6 @@
+﻿度量,与Z-score Euclidean最近邻不同(%),与Z-score Euclidean前5邻居重叠(%),预处理参数来源
+Raw Euclidean,76.1,28.4,仅训练集
+Z-score Euclidean,0.0,100.0,仅训练集
+Z-score Manhattan,21.7,79.1,仅训练集
+Cosine,85.5,19.4,仅训练集
+Correlation,88.0,19.2,仅训练集

@@ -1,0 +1,231 @@
+{
+  "study_goal": "在选择检验或模型前，依据结构、语义、质量、相似性、抽样和预处理证据形成可辩护的数据审查工作流。",
+  "learning_objectives": [
+    {
+      "id": "LO1",
+      "source_excerpt": "区分变量类型；用样本×特征矩阵解释临床、组学和影像表。",
+      "observable_outcome": "正确标注观察单位、变量角色、语义类型和矩阵结构。"
+    },
+    {
+      "id": "LO2",
+      "source_excerpt": "提出合理方法候选；识别缺失、异常、批次、类别不平衡和测量误差。",
+      "observable_outcome": "用中心分层证据识别至少两类质量风险并匹配方法。"
+    },
+    {
+      "id": "LO3",
+      "source_excerpt": "判断标准化变量并说明划分后实施；说明抽样与属性变换的用途、风险和顺序。",
+      "observable_outcome": "写出泄漏安全的抽样、划分与预处理顺序。"
+    },
+    {
+      "id": "LO4",
+      "source_excerpt": "按数据语义选择Euclidean/Manhattan、cosine、correlation或Jaccard。",
+      "observable_outcome": "依据尺度、平移、稀疏性和共同为0解释距离选择。"
+    },
+    {
+      "id": "LO5",
+      "source_excerpt": "审查公开生物医学数据集并写出结论边界。",
+      "observable_outcome": "提交包含主张、证据、推理和边界的数据审查备忘录。"
+    }
+  ],
+  "decision_problem": "决定四中心心脏病记录应直接合并、附条件合并、单中心分析还是暂缓，并给出患者相似性与预处理方案。",
+  "driving_question": "面对四中心920条历史心脏病记录，如何依据变量语义、缺失与中心差异、尺度和抽样证据决定合并、表示和预处理方式；若关键检查失败，哪些结论必须停止？",
+  "entry_type": "direct_problem",
+  "data_context": {
+    "dataset_name": "UCI Heart Disease four-site processed files",
+    "source": "https://archive.ics.uci.edu/dataset/45/heart+disease",
+    "doi": "10.24432/C52P4X",
+    "license": "CC BY 4.0",
+    "task": "data structure, quality, similarity, sampling, and preprocessing audit",
+    "observation_unit": "one historical patient examination record",
+    "variable_roles": {
+      "continuous": [
+        "age",
+        "trestbps",
+        "chol",
+        "thalach",
+        "oldpeak"
+      ],
+      "categorical": [
+        "sex",
+        "cp",
+        "fbs",
+        "restecg",
+        "exang",
+        "slope",
+        "thal"
+      ],
+      "discrete": [
+        "ca"
+      ],
+      "metadata": [
+        "record_id",
+        "site"
+      ]
+    },
+    "grouping_fields": [
+      "site"
+    ],
+    "target": "num (0-4), with disease_presence = num > 0 used only when a binary distinction is explicitly required"
+  },
+  "analyses": [
+    {
+      "id": "A1",
+      "objective_ids": [
+        "LO1"
+      ],
+      "question": "一行、一列、目标和来源分别是什么？",
+      "domain": "data_structure",
+      "method": "结构摘要、数据字典、唯一值和角色审查",
+      "applicability": "将存储类型转为可解释的变量语义",
+      "artifacts": [
+        "dataset-summary.csv",
+        "packet-b-data-dictionary.csv"
+      ],
+      "packet": "B",
+      "interpretation_boundary": "编码值本身不能决定统计类型",
+      "notebook_ref": "A1-structure"
+    },
+    {
+      "id": "A2",
+      "objective_ids": [
+        "LO2"
+      ],
+      "question": "质量问题是否依赖中心，方法候选是否匹配变量？",
+      "domain": "data_quality",
+      "method": "按中心比较缺失、完整性、目标构成、分布和方法映射",
+      "applicability": "揭示直接合并的风险",
+      "artifacts": [
+        "packet-b-site-quality.csv",
+        "packet-b-missingness-by-site.csv",
+        "packet-b-target-distribution.csv",
+        "packet-b-continuous-summary.csv",
+        "packet-b-method-map.csv",
+        "packet-b-site-quality.png"
+      ],
+      "packet": "B",
+      "interpretation_boundary": "中心差异不能被解释为因果或纯批次效应",
+      "notebook_ref": "A2-quality"
+    },
+    {
+      "id": "A3",
+      "objective_ids": [
+        "LO4"
+      ],
+      "question": "表示、尺度和共同为0如何改变相似性？",
+      "domain": "similarity_distance",
+      "method": "训练集拟合插补/标准化后比较五类度量及Jaccard/SMC",
+      "applicability": "使距离选择与变量语义相连",
+      "artifacts": [
+        "packet-c-distance-sensitivity.csv",
+        "packet-c-distance-examples.csv",
+        "packet-c-distance-sensitivity.png",
+        "packet-c-binary-similarity.csv"
+      ],
+      "packet": "C",
+      "interpretation_boundary": "邻居只对声明的表示与度量成立",
+      "notebook_ref": "A3-distance"
+    },
+    {
+      "id": "A4",
+      "objective_ids": [
+        "LO3"
+      ],
+      "question": "抽样和目标变换改变了什么？",
+      "domain": "sampling_representativeness",
+      "method": "500次简单随机与中心×结局分层抽样；比较目标二值化",
+      "applicability": "展示代表性波动和信息损失",
+      "artifacts": [
+        "packet-c-sampling-replicates.csv",
+        "packet-c-sampling-summary.csv",
+        "packet-c-sampling-sensitivity.png",
+        "packet-c-target-transformation.csv"
+      ],
+      "packet": "C",
+      "interpretation_boundary": "保护已知分层不等于总体代表性",
+      "notebook_ref": "A4-sampling"
+    },
+    {
+      "id": "A5",
+      "objective_ids": [
+        "LO3",
+        "LO5"
+      ],
+      "question": "怎样实施泄漏安全的预处理并形成停止条件？",
+      "domain": "transformation_preprocessing",
+      "method": "固定分层划分；比较训练与全数据参数；工作流审查",
+      "applicability": "把原则转为可检查步骤",
+      "artifacts": [
+        "packet-d-parameter-sensitivity.csv",
+        "packet-d-preprocessing-audit.csv",
+        "packet-d-preprocessing-workflow.png"
+      ],
+      "packet": "D",
+      "interpretation_boundary": "本分析不估计模型泛化性能",
+      "notebook_ref": "A5-workflow"
+    },
+    {
+      "id": "A6",
+      "objective_ids": [
+        "LO5"
+      ],
+      "question": "证据允许哪一级主张？",
+      "domain": "validation_robustness",
+      "method": "决策矩阵与描述/关联/因果/临床/部署边界审查",
+      "applicability": "形成可辩护结论",
+      "artifacts": [
+        "packet-d-workflow-decision.csv",
+        "packet-d-boundary-checklist.csv"
+      ],
+      "packet": "D",
+      "interpretation_boundary": "不声称临床可用、因果或部署准备度",
+      "notebook_ref": "A6-boundary"
+    }
+  ],
+  "split_plan": {
+    "required": true,
+    "unit": "patient record",
+    "rationale": "划分用于演示预处理泄漏；不用于报告预测泛化性能。按site × disease_presence分层，70/30，seed=2026。"
+  },
+  "packets": {
+    "A": {
+      "purpose": "在不完整信息下形成初始判断",
+      "reveals": [
+        "四中心来源、样本量、任务"
+      ],
+      "withholds": [
+        "中心缺失、目标构成、距离和抽样敏感性"
+      ]
+    },
+    "B": {
+      "purpose": "结构与质量审查",
+      "reveals": [
+        "数据字典、缺失、目标构成、分布和方法映射"
+      ],
+      "withholds": [
+        "距离和抽样敏感性、综合工作流"
+      ]
+    },
+    "C": {
+      "purpose": "表示、距离与抽样敏感性",
+      "reveals": [
+        "距离变化、Jaccard/SMC、抽样和二值化后果"
+      ],
+      "withholds": [
+        "最终综合工作流"
+      ]
+    },
+    "D": {
+      "purpose": "形成工作流和结论边界",
+      "reveals": [
+        "泄漏安全顺序、决策条件、报告边界"
+      ],
+      "withholds": []
+    }
+  },
+  "boundaries": [
+    "teaching only",
+    "not clinical advice",
+    "not causal evidence",
+    "not deployment-ready"
+  ]
+}
