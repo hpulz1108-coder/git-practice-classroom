@@ -1,4 +1,9 @@
 .DS_Store
 *.swp
 *.tmp
+.venv*/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+student-results/
 

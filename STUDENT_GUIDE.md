@@ -88,17 +88,19 @@ git push -u origin hw01/20260001-张三
 
 看到 Pull Request 页面就表示提交成功。后续如需修改，继续在同一分支修改、Commit 并 Push，Pull Request 会自动更新，不需要重复创建。
 
-## 提交下一次作业
+## 提交后续作业
 
-开始 `hw02` 前，先回到 `main` 并获取教师发布的最新内容：
+开始一份新作业前，先回到`main`并获取教师发布的最新内容。以下以HW03为例：
 
 ```bash
 git switch main
 git pull origin main
-git switch -c hw02/学号-姓名
+git switch -c hw03/学号-姓名
 ```
 
-然后按照 [`assignments/hw02/README.md`](assignments/hw02/README.md) 的要求，在 `submissions/hw02/学号-姓名/` 中完成作业，Commit、Push，并创建新的 Pull Request。每次作业都应使用新的分支。
+然后按照[`assignments/hw03/README.md`](assignments/hw03/README.md)的要求，在`submissions/hw03/学号-姓名/`中完成作业，Commit、Push，并创建新的Pull Request。每次作业都应使用新的分支。
+
+尚未完成上一份作业时，可以继续在原分支和原Pull Request中补交；这不影响从最新`main`开始新作业。不要从旧作业分支创建新作业分支，也不要把两次作业放进同一个Pull Request。
 
 ## 常用排错命令
 
