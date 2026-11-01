@@ -1,0 +1,39 @@
+{
+  "dataset": "Golub leukemia (OpenML 1104, version 1)",
+  "download_date": "2026-09-25",
+  "n_samples": 72,
+  "n_features": 7129,
+  "p_over_n": 99.01388888888889,
+  "class_counts": {
+    "ALL": 47,
+    "AML": 25
+  },
+  "original_train_counts": {
+    "ALL": 27,
+    "AML": 11
+  },
+  "original_test_counts": {
+    "ALL": 20,
+    "AML": 14
+  },
+  "nonfinite_values": 0,
+  "constant_features": 0,
+  "duplicate_feature_rows": 0,
+  "negative_values": 147174,
+  "zero_values": 1615,
+  "minimum": -28400.0,
+  "maximum": 71369.0,
+  "unique_feature_names": 7129,
+  "sha256": {
+    "leukemia/source/leukemia.arff": "b10d7bfd33b8b881cbf3a1a30ea3d8ebeb0fa39d741f35b6d82d59daa5fa5ed7",
+    "leukemia/source/openml-metadata.json": "713e446844d5f4b88b1b111b9ded941b93b3868fb2b6ad24c6290b7b601d20ec",
+    "leukemia/leukemia.csv": "915bce00295ac470f6bd970a4032730a170a080642a5da53ab0bcb0545156f19"
+  },
+  "transformations": [
+    "Preserved all rows, feature values and feature order.",
+    "Trimmed whitespace around CLASS labels.",
+    "Renamed CLASS to diagnosis.",
+    "Added teaching row IDs G001-G072, not patient identifiers.",
+    "Added original_split from source statement: first 38 rows train, remaining 34 test."
+  ]
+}
