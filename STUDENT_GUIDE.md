@@ -100,7 +100,15 @@ git switch -c hw03/学号-姓名
 
 然后按照[`assignments/hw03/README.md`](assignments/hw03/README.md)的要求，在`submissions/hw03/学号-姓名/`中完成作业，Commit、Push，并创建新的Pull Request。每次作业都应使用新的分支。
 
-尚未完成上一份作业时，可以继续在原分支和原Pull Request中补交；这不影响从最新`main`开始新作业。不要从旧作业分支创建新作业分支，也不要把两次作业放进同一个Pull Request。
+尚未完成上一份作业时，可以继续在原分支和原Pull Request中补交；这不影响从最新`main`开始新作业。不要从旧作业分支创建新作业分支，也不要把两次作业放进同一个Pull Request。HW04同样使用新分支，例如：
+
+```bash
+git switch main
+git pull origin main
+git switch -c hw04/学号-姓名
+```
+
+具体文件要求见[`assignments/hw04/README.md`](assignments/hw04/README.md)。
 
 ## 常用排错命令
 

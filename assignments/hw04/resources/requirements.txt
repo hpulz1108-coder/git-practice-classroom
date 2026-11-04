@@ -1,0 +1,10 @@
+# HW04 建议环境（在独立虚拟环境中安装）
+numpy==2.3.5
+pandas==2.3.3
+scipy==1.17.1
+scikit-learn==1.8.0
+umap-learn==0.5.12
+matplotlib==3.10.8
+threadpoolctl==3.6.0
+jupyter>=1.0
+nbformat>=5.0

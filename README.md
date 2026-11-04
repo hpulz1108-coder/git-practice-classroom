@@ -8,9 +8,10 @@
 
 ## 当前作业
 
+- [HW04：降维、PCA 与 UMAP](assignments/hw04/README.md)
 - [HW03：高维数据与维度灾难](assignments/hw03/README.md)
 - [HW02：理解数据——UCI 四中心心脏病数据审查](assignments/hw02/README.md)
-- HW02补交通道保持开放；HW03截止时间以课程群内通知为准。
+- HW02、HW03补交通道保持开放；HW04截止时间以课程群内通知为准。
 
 开始作业前请先阅读任务说明和 [学生提交流程](STUDENT_GUIDE.md)。第一次 Git 练习保留在 [`submissions/hw01`](submissions/hw01)。
 

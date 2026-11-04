@@ -1,0 +1,2 @@
+# Preserve downloaded snapshots and teaching CSV bytes for SHA-256 checks.
+resources/data/leukemia/** -text
