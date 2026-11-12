@@ -110,6 +110,18 @@ git switch -c hw04/学号-姓名
 
 具体文件要求见[`assignments/hw04/README.md`](assignments/hw04/README.md)。
 
+HW05 使用同样的独立分支流程：
+
+```bash
+git switch main
+git pull origin main
+git switch -c hw05/学号-姓名
+```
+
+在 `submissions/hw05/学号-姓名/` 中完成假设检验设计书，然后 Commit、Push 并创建 Pull Request，标题为 `HW05 假设检验 - 学号 - 姓名`。具体要求与模板见 [HW05 作业说明](assignments/hw05/README.md)。
+
+往次作业可以继续补交；原 Pull Request 尚未合并时，在原分支继续更新；原 Pull Request 已合并后需要补充时，从最新 `main` 新建对应作业的补充分支和 Pull Request。
+
 ## 常用排错命令
 
 查看文件状态：
