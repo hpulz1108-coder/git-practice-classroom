@@ -2,7 +2,7 @@
 
 - 姓名：史英琦
 - 学号：38720260158053
-- GitHub 用户名：https://github.com/cpy666syq
+- GitHub 用户名：https://github.com/cp666syq
 - 完成日期：2026-11-18
 - 本文是：研究设计计划（未进行实际数据分析）
 
