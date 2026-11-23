@@ -120,6 +120,16 @@ git switch -c hw05/学号-姓名
 
 在 `submissions/hw05/学号-姓名/` 中完成假设检验设计书，然后 Commit、Push 并创建 Pull Request，标题为 `HW05 假设检验 - 学号 - 姓名`。具体要求与模板见 [HW05 作业说明](assignments/hw05/README.md)。
 
+HW06 也从最新 `main` 创建新分支：
+
+```bash
+git switch main
+git pull origin main
+git switch -c hw06/学号-姓名
+```
+
+在 `submissions/hw06/学号-姓名/` 中提交实验报告和正式的候选锁定名单，Pull Request 标题为 `HW06 多重检验 - 学号 - 姓名`。具体要求和可直接运行的 Notebook 见 [HW06 作业说明](assignments/hw06/README.md)。不要修改公共 Notebook，也不要把 `.tmp` 中的批量运行文件提交到 Git。
+
 往次作业可以继续补交；原 Pull Request 尚未合并时，在原分支继续更新；原 Pull Request 已合并后需要补充时，从最新 `main` 新建对应作业的补充分支和 Pull Request。
 
 ## 常用排错命令
